@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import ListWrapper from './components/ListWrapper/ListWrapper';
+import Form from './components/Form/Form';
 
 const initialStateItems = [{
   image: "https://www.tate.org.uk/art/images/research/2148_10.jpg",
@@ -33,10 +34,30 @@ class App extends Component {
     items: [...initialStateItems],
   }
 
+  addItem = (e) => {
+    e.preventDefault();
+
+    const newItem = {
+      name: e.target[0].value,
+      twitterLink: e.target[1].value,
+      image: e.target[2].value,
+      description: e.target[3].value,
+    }
+
+    const items = [...this.state.items, newItem];
+
+    this.setState({
+      items,
+    })
+
+    e.target.reset();
+  }
+
   render() {
     return (
       <div>
         <ListWrapper items={this.state.items} />
+        <Form submitFn={this.addItem} />
       </div>
     );
   }
