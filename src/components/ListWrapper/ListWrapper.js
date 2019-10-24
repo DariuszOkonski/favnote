@@ -9,12 +9,10 @@ const ListWrapper = () => {
     <ul className="listWrapper__wrapper">
 
       {twitterAccounts.map(item =>
-
         <ListItem
           key={item.name}
           {...item}
         />
-
       )}
 
     </ul>
