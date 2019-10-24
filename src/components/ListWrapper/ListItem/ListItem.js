@@ -6,7 +6,7 @@ const ListItem = ({ image, name, description, twitterLink }) => {
     <li className='listItem__wrapper'>
       <img
         src={image}
-        alt=""
+        alt={name}
         className="listItem__image"
       />
       <div>
@@ -14,7 +14,7 @@ const ListItem = ({ image, name, description, twitterLink }) => {
         <p className="listItem__description">
           {description}
         </p>
-        <button className="listItem__button">visit twitter page</button>
+        <a href={twitterLink} className="listItem__button">visit twitter page</a>
       </div>
     </li>
   );
