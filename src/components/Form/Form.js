@@ -13,25 +13,44 @@ const Form = ({ submitFn }) => {
       >
 
         <div className={styles.form__item}>
-          <input type="text" name="name" id="name" maxLength="30" />
+          <input
+            required
+            type="text"
+            name="name"
+            id="name"
+            maxLength="30"
+          />
           <label htmlFor="name">Name</label>
           <div className={styles.forms__item__bar}></div>
         </div>
 
         <div className={styles.form__item}>
-          <input type="text" name="link" id="link" />
+          <input
+            required
+            type="text"
+            name="link"
+            id="link"
+          />
           <label htmlFor="link">Link</label>
           <div className={styles.forms__item__bar}></div>
         </div>
 
         <div className={styles.form__item}>
-          <input type="text" name="image" id="image" />
+          <input
+            type="text"
+            name="image"
+            id="image"
+          />
           <label htmlFor="image">Image</label>
           <div className={styles.forms__item__bar}></div>
         </div>
 
         <div className={styles.form__item}>
-          <textarea name="description" id="description" ></textarea>
+          <textarea
+            required
+            name="description"
+            id="description"
+          ></textarea>
           <label htmlFor="description">Description</label>
           <div className={styles.forms__item__bar}></div>
         </div>
