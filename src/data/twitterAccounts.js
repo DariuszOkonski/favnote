@@ -6,7 +6,7 @@ import kentCDoddsImage from '../assets/images/kentcdodds.jpg';
 export const twitterAccounts = [{
         image: danAbramovImage,
         name: 'Dan Abramov',
-        description: 'Working on @reactjs. The demo guy.',
+        // description: 'Working on @reactjs. The demo guy.',
         twitterLink: 'https://twitter.com/dan_abramov',
     },
     {
