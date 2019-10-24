@@ -1,25 +1,26 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import './ListItem.css';
+// import './ListItem.css';
+import styles from '../css/ListItem.module.css';
 
 const ListItem = ({ image, name, description, twitterLink }) => {
   return (
-    <li className='listItem__wrapper'>
+    <li className={styles.listItem__wrapper}>
       <img
         src={image}
         alt={name}
-        className="listItem__image"
+        className={styles.listItem__image}
       />
       <div>
-        <h2 className="listItem__name">{name || 'Dariusz'}</h2>
-        <p className="listItem__description">
+        <h2 className={styles.listItem__name}>{name || 'Dariusz'}</h2>
+        <p className={styles.listItem__description}>
           {description}
         </p>
         <a
           href={twitterLink}
           target='_blank'
           rel='noopener noreferrer'
-          className="listItem__button"
+          className={styles.listItem__button}
         >visit twitter page</a>
       </div>
     </li>

@@ -1,10 +1,11 @@
 import React from 'react';
 import ListItem from './ListItem/ListItem';
+import styles from '../css/ListWrapper.module.css'
 
 
 const ListWrapper = ({ items }) => {
   return (
-    <ul className="listWrapper__wrapper">
+    <ul className={styles.listWrapper__wrapper}>
 
       {items.map(item =>
         <ListItem
