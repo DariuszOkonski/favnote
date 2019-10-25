@@ -1,59 +1,40 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../css/Form.module.css';
+import Input from '../Input/Input';
 
 const Form = ({ submitFn }) => {
   return (
     <div className={styles.wrapper}>
       <h2>Add new twitter account</h2>
 
+
       <form
         className={styles.form__form}
         onSubmit={(e) => submitFn(e)}
       >
 
-        <div className={styles.form__item}>
-          <input
-            required
-            type="text"
-            name="name"
-            id="name"
-            maxLength="30"
-          />
-          <label htmlFor="name">Name</label>
-          <div className={styles.forms__item__bar}></div>
-        </div>
+        <Input
+          name="name"
+          label="Name"
+          maxLength={30}
+        />
 
-        <div className={styles.form__item}>
-          <input
-            required
-            type="text"
-            name="link"
-            id="link"
-          />
-          <label htmlFor="link">Link</label>
-          <div className={styles.forms__item__bar}></div>
-        </div>
+        <Input
+          name="link"
+          label="Link"
+        />
 
-        <div className={styles.form__item}>
-          <input
-            type="text"
-            name="image"
-            id="image"
-          />
-          <label htmlFor="image">Image</label>
-          <div className={styles.forms__item__bar}></div>
-        </div>
+        <Input
+          name="image"
+          label="Image"
+        />
 
-        <div className={styles.form__item}>
-          <textarea
-            required
-            name="description"
-            id="description"
-          ></textarea>
-          <label htmlFor="description">Description</label>
-          <div className={styles.forms__item__bar}></div>
-        </div>
+        <Input
+          tag="textarea"
+          name="description"
+          label="Description"
+        />
 
         <button className={styles.form__button} type="submit">add new item</button>
       </form>
