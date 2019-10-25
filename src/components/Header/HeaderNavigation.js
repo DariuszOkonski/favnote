@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import styles from '../css/Navigation.module.css';
+import styles from '../css/HeaderNavigation.module.css';
 
-const Navigation = () => {
+const HeaderNavigation = () => {
   return (
     <nav>
       <ul className={styles.wrapper}>
@@ -32,4 +32,4 @@ const Navigation = () => {
   );
 }
 
-export default Navigation;
+export default HeaderNavigation;
