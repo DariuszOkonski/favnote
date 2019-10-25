@@ -6,4 +6,11 @@
   padding: 7px 12px;
   font-size: 10px;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.secondary {
+  @extend .button;
+  background-color: #1e58ff;
+  color: #fff;
 }
