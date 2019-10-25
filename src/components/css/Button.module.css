@@ -1,4 +1,4 @@
-.button {
+.button, .secondary {
   font-weight: 500;
   background: none;
   border: 2px solid #1e58ff;
@@ -6,5 +6,11 @@
   padding: 7px 12px;
   font-size: 10px;
   text-decoration: none;
+  cursor: pointer;
+}
+
+.secondary {
+  background-color: #1e58ff;
+  color: #fff;
 }
 /*# sourceMappingURL=Button.module.css.map */
