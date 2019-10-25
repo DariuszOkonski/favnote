@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../css/Form.module.css';
 import Input from '../Input/Input';
+import Button from '../Button/Button';
 
 const Form = ({ submitFn }) => {
   return (
     <div className={styles.wrapper}>
       <h2>Add new twitter account</h2>
-
 
       <form
         className={styles.form__form}
@@ -36,7 +36,7 @@ const Form = ({ submitFn }) => {
           label="Description"
         />
 
-        <button className={styles.form__button} type="submit">add new item</button>
+        <Button>add new item</Button>
       </form>
     </div>
   );
