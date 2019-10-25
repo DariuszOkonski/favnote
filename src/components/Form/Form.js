@@ -3,11 +3,12 @@ import PropTypes from 'prop-types';
 import styles from '../css/Form.module.css';
 import Input from '../Input/Input';
 import Button from '../Button/Button';
+import Title from '../Title/Title';
 
 const Form = ({ submitFn }) => {
   return (
     <div className={styles.wrapper}>
-      <h2>Add new twitter account</h2>
+      <Title>Add new twitter account</Title>
 
       <form
         className={styles.form__form}
