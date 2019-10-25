@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 // import './ListItem.css';
 import styles from '../css/ListItem.module.css';
+import Button from '../../Button/Button';
 
 const ListItem = ({ image, name, description, twitterLink }) => {
   const ImageTag = image ? 'img' : 'div';
@@ -19,12 +20,8 @@ const ListItem = ({ image, name, description, twitterLink }) => {
         <p className={styles.listItem__description}>
           {description}
         </p>
-        <a
-          href={twitterLink}
-          target='_blank'
-          rel='noopener noreferrer'
-          className={styles.listItem__button}
-        >visit twitter page</a>
+
+        <Button href={twitterLink}>visit twitter page</Button>
       </div>
     </li>
   );
