@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import './index.css';
+import TwittersView from '../TwittersView/TwittersView';
+import ArticlesView from '../ArticlesView/ArticlesView';
+import NotesView from '../NotesView/NotesView';
 
 const initialStateItems = [{
   image: "https://res.cloudinary.com/awesomereact/image/youtube/w_460,h_259,c_fill/dRo_egw7tBc.jpg",
@@ -35,9 +39,15 @@ class Root extends Component {
 
   render() {
     return (
-      <div>
-        <h1>Hello world</h1>
-      </div>
+      <BrowserRouter>
+        <>
+          <h1>Hello world</h1>
+
+          <Route exact path="/" component={TwittersView} />
+          <Route path="/articles" component={ArticlesView} />
+          <Route path="/notes" component={NotesView} />
+        </>
+      </BrowserRouter>
     );
   }
 
