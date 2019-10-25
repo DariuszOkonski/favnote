@@ -4,7 +4,7 @@ import './index.css';
 import TwittersView from '../TwittersView/TwittersView';
 import ArticlesView from '../ArticlesView/ArticlesView';
 import NotesView from '../NotesView/NotesView';
-import HeaderNavigation from '../../components/Header/HeaderNavigation';
+import Header from '../../components/Header/Header';
 
 const initialStateItems = [{
   image: "https://res.cloudinary.com/awesomereact/image/youtube/w_460,h_259,c_fill/dRo_egw7tBc.jpg",
@@ -42,7 +42,7 @@ class Root extends Component {
     return (
       <BrowserRouter>
         <>
-          <HeaderNavigation />
+          <Header />
           <h1>Hello world</h1>
 
           <Switch>
