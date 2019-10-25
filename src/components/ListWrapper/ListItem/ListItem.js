@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import './ListItem.css';
 import styles from '../css/ListItem.module.css';
 import Button from '../../Button/Button';
+import Title from '../../Title/Title';
 
 const ListItem = ({ image, name, description, twitterLink }) => {
   const ImageTag = image ? 'img' : 'div';
@@ -16,7 +16,8 @@ const ListItem = ({ image, name, description, twitterLink }) => {
       />
 
       <div>
-        <h2 className={styles.listItem__name}>{name || 'Dariusz'}</h2>
+        <Title>{name || 'No name'}</Title>
+
         <p className={styles.listItem__description}>
           {description}
         </p>
