@@ -21,6 +21,10 @@ const descriptions = {
 class Form extends Component {
   state = {
     activeOption: types.twitter,
+    title: '',
+    link: '',
+    image: '',
+    description: '',
   }
 
   handleRadioButtonChange = (type) => {
@@ -29,8 +33,21 @@ class Form extends Component {
     })
   }
 
+  handleInputChange = (e) => {
+    this.setState({
+      [e.target.name]: e.target.value,
+    });
+
+    console.log(`
+      title: ${this.state.title}
+      link: ${this.state.link}
+      image: ${this.state.image}
+      description: ${this.state.description}
+    `)
+  }
+
   render() {
-    const { activeOption } = this.state;
+    const { activeOption, title, link, image, description } = this.state;
 
     return (
 
@@ -47,7 +64,7 @@ class Form extends Component {
               <div className={styles.inputWrapper}>
                 <label className={styles.lableRadio} htmlFor={types.twitter}>
                   Twitter
-              <input className={styles.inputRadio}
+                  <input className={styles.inputRadio}
                     id={types.twitter}
                     type="radio"
                     checked={activeOption === types.twitter}
@@ -57,7 +74,7 @@ class Form extends Component {
 
                 <label className={styles.lableRadio} htmlFor={types.article}>
                   Article
-              <input className={styles.inputRadio}
+                  <input className={styles.inputRadio}
                     id={types.article}
                     type="radio"
                     checked={activeOption === types.article}
@@ -67,7 +84,7 @@ class Form extends Component {
 
                 <label className={styles.lableRadio} htmlFor={types.note}>
                   Notes
-              <input className={styles.inputRadio}
+                  <input className={styles.inputRadio}
                     id={types.note}
                     type="radio"
                     checked={activeOption === types.note}
@@ -77,13 +94,17 @@ class Form extends Component {
               </div>
 
               <Input
-                name="name"
+                onChange={this.handleInputChange}
+                value={title}
+                name="title"
                 label={activeOption === types.twitter ? "Twitter Name" : "Title"}
                 maxLength={30}
               />
 
               {activeOption !== types.note ?
                 <Input
+                  onChange={this.handleInputChange}
+                  value={link}
                   name="link"
                   label={activeOption === types.twitter ? "Twitter Link" : "Link"}
                 /> : null
@@ -91,12 +112,16 @@ class Form extends Component {
 
               {(activeOption === types.twitter) ?
                 <Input
+                  onChange={this.handleInputChange}
+                  value={image}
                   name="image"
                   label="Image"
                 /> : null
               }
 
               <Input
+                onChange={this.handleInputChange}
+                value={description}
                 tag="textarea"
                 name="description"
                 label="Description"
