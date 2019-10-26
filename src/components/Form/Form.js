@@ -44,7 +44,7 @@ const Form = ({ submitFn }) => {
 }
 
 Form.propTypes = {
-  submitFn: PropTypes.func.isRequired,
+  submitFn: PropTypes.func,
 }
 
 export default Form;
