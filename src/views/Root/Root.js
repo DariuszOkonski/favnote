@@ -22,7 +22,7 @@ class Root extends Component {
 
   addItem = (e) => {
     e.preventDefault();
-    console.log('It works!!!');
+    console.log(e.target);
 
 
     // const newItem = {
