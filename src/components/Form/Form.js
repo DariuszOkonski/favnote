@@ -51,7 +51,7 @@ class Form extends Component {
 
             <form
               className={styles.form__form}
-              onSubmit={context.addItem}
+              onSubmit={(e) => context.addItem(e, this.state)}
             >
 
               <div className={styles.inputWrapper}>
