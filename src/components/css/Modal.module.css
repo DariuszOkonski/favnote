@@ -13,4 +13,17 @@
   -webkit-box-shadow: 11px 10px 35px -9px #918f91;
           box-shadow: 11px 10px 35px -9px #918f91;
 }
+
+.wrapper .button {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  width: 30px;
+  height: 30px;
+  background-color: #1e58ff;
+  color: #fff;
+  border: none;
+  padding: 5px;
+  cursor: pointer;
+}
 /*# sourceMappingURL=Modal.module.css.map */
