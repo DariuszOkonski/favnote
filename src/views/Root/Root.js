@@ -18,6 +18,7 @@ const initialStateItems = [{
 class Root extends Component {
   state = {
     items: [...initialStateItems],
+    isModalOpen: false,
   }
 
   addItem = (e) => {
@@ -39,11 +40,26 @@ class Root extends Component {
     e.target.reset();
   }
 
+  openModal = () => {
+    this.setState({
+      isModalOpen: true,
+    })
+  }
+
+  closeModal = () => {
+    this.setState({
+      isModalOpen: false,
+    })
+  }
+
   render() {
+    const { isModalOpen } = this.state;
+
     return (
       <BrowserRouter>
         <>
-          <Header />
+          <Header openModalFn={this.openModal} />
+
           <h1>Hello world</h1>
 
           <Switch>
@@ -52,7 +68,7 @@ class Root extends Component {
             <Route path="/notes" component={NotesView} />
           </Switch>
 
-          <Modal />
+          {isModalOpen && <Modal closeModalFn={this.closeModal} />}
         </>
       </BrowserRouter>
     );
