@@ -20,7 +20,7 @@ const descriptions = {
 
 class Form extends Component {
   state = {
-    activeOption: types.twitter,
+    type: types.twitter,
     title: '',
     link: '',
     image: '',
@@ -29,7 +29,7 @@ class Form extends Component {
 
   handleRadioButtonChange = (type) => {
     this.setState({
-      activeOption: type,
+      type: type,
     })
   }
 
@@ -37,24 +37,17 @@ class Form extends Component {
     this.setState({
       [e.target.name]: e.target.value,
     });
-
-    console.log(`
-      title: ${this.state.title}
-      link: ${this.state.link}
-      image: ${this.state.image}
-      description: ${this.state.description}
-    `)
   }
 
   render() {
-    const { activeOption, title, link, image, description } = this.state;
+    const { type, title, link, image, description } = this.state;
 
     return (
 
       <AppContext.Consumer>
         {(context) => (
           <div className={styles.wrapper}>
-            <Title>Add new {descriptions[activeOption]}</Title>
+            <Title>Add new {descriptions[type]}</Title>
 
             <form
               className={styles.form__form}
@@ -67,7 +60,7 @@ class Form extends Component {
                   <input className={styles.inputRadio}
                     id={types.twitter}
                     type="radio"
-                    checked={activeOption === types.twitter}
+                    checked={type === types.twitter}
                     onChange={() => this.handleRadioButtonChange(types.twitter)}
                   />
                 </label>
@@ -77,7 +70,7 @@ class Form extends Component {
                   <input className={styles.inputRadio}
                     id={types.article}
                     type="radio"
-                    checked={activeOption === types.article}
+                    checked={type === types.article}
                     onChange={() => this.handleRadioButtonChange(types.article)}
                   />
                 </label>
@@ -87,7 +80,7 @@ class Form extends Component {
                   <input className={styles.inputRadio}
                     id={types.note}
                     type="radio"
-                    checked={activeOption === types.note}
+                    checked={type === types.note}
                     onChange={() => this.handleRadioButtonChange(types.note)}
                   />
                 </label>
@@ -97,20 +90,20 @@ class Form extends Component {
                 onChange={this.handleInputChange}
                 value={title}
                 name="title"
-                label={activeOption === types.twitter ? "Twitter Name" : "Title"}
+                label={type === types.twitter ? "Twitter Name" : "Title"}
                 maxLength={30}
               />
 
-              {activeOption !== types.note ?
+              {type !== types.note ?
                 <Input
                   onChange={this.handleInputChange}
                   value={link}
                   name="link"
-                  label={activeOption === types.twitter ? "Twitter Link" : "Link"}
+                  label={type === types.twitter ? "Twitter Link" : "Link"}
                 /> : null
               }
 
-              {(activeOption === types.twitter) ?
+              {(type === types.twitter) ?
                 <Input
                   onChange={this.handleInputChange}
                   value={image}
