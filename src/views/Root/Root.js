@@ -56,7 +56,7 @@ class Root extends Component {
     const { isModalOpen } = this.state;
 
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <>
           <Header openModalFn={this.openModal} />
 
