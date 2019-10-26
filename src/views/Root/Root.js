@@ -18,7 +18,7 @@ const initialStateItems = [{
 class Root extends Component {
   state = {
     items: [...initialStateItems],
-    isModalOpen: false,
+    isModalOpen: true,
   }
 
   addItem = (e) => {
