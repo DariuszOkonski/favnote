@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import AppContext from '../../context';
 import './index.css';
 import TwittersView from '../TwittersView/TwittersView';
 import ArticlesView from '../ArticlesView/ArticlesView';
@@ -7,37 +8,37 @@ import NotesView from '../NotesView/NotesView';
 import Header from '../../components/Header/Header';
 import Modal from '../../components/Modal/Modal';
 
-const initialStateItems = [{
-  image: "https://res.cloudinary.com/awesomereact/image/youtube/w_460,h_259,c_fill/dRo_egw7tBc.jpg",
-  name: 'Dan Abramov',
-  description: 'Working on @reactjs. The demo guy.',
-  twitterLink: 'https://twitter.com/dan_abramov',
-},
-]
-
 class Root extends Component {
   state = {
-    items: [...initialStateItems],
+    items: {
+      twitters: [],
+      articles: [],
+      notes: [],
+    },
     isModalOpen: false,
+    name: 'Dariusz',
+    sureName: 'Okonski',
   }
 
   addItem = (e) => {
     e.preventDefault();
+    console.log('It works!!!');
 
-    const newItem = {
-      name: e.target[0].value,
-      twitterLink: e.target[1].value,
-      image: e.target[2].value,
-      description: e.target[3].value,
-    }
 
-    const items = [...this.state.items, newItem];
+    // const newItem = {
+    //   name: e.target[0].value,
+    //   twitterLink: e.target[1].value,
+    //   image: e.target[2].value,
+    //   description: e.target[3].value,
+    // }
 
-    this.setState({
-      items,
-    })
+    // const items = [...this.state.items, newItem];
 
-    e.target.reset();
+    // this.setState({
+    //   items,
+    // })
+
+    // e.target.reset();
   }
 
   openModal = () => {
@@ -54,10 +55,14 @@ class Root extends Component {
 
   render() {
     const { isModalOpen } = this.state;
+    const contextElements = {
+      ...this.state,
+      addItem: this.addItem,
+    }
 
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <>
+        <AppContext.Provider value={contextElements}>
           <Header openModalFn={this.openModal} />
 
           <h1>Hello world</h1>
@@ -69,7 +74,7 @@ class Root extends Component {
           </Switch>
 
           {isModalOpen && <Modal closeModalFn={this.closeModal} />}
-        </>
+        </AppContext.Provider>
       </BrowserRouter>
     );
   }
