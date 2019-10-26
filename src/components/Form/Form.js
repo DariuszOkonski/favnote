@@ -29,9 +29,11 @@ class Form extends Component {
   }
 
   render() {
+    const { activeOption } = this.state;
+
     return (
       <div className={styles.wrapper}>
-        <Title>Add new {descriptions[this.state.activeOption]}</Title>
+        <Title>Add new {descriptions[activeOption]}</Title>
 
         <form
           className={styles.form__form}
@@ -45,7 +47,7 @@ class Form extends Component {
               <input className={styles.inputRadio}
                 id={types.twitter}
                 type="radio"
-                checked={this.state.activeOption === types.twitter}
+                checked={activeOption === types.twitter}
                 onChange={() => this.handleRadioButtonChange(types.twitter)}
               />
             </label>
@@ -55,7 +57,7 @@ class Form extends Component {
               <input className={styles.inputRadio}
                 id={types.article}
                 type="radio"
-                checked={this.state.activeOption === types.article}
+                checked={activeOption === types.article}
                 onChange={() => this.handleRadioButtonChange(types.article)}
               />
             </label>
@@ -65,7 +67,7 @@ class Form extends Component {
               <input className={styles.inputRadio}
                 id={types.note}
                 type="radio"
-                checked={this.state.activeOption === types.note}
+                checked={activeOption === types.note}
                 onChange={() => this.handleRadioButtonChange(types.note)}
               />
             </label>
@@ -73,19 +75,23 @@ class Form extends Component {
 
           <Input
             name="name"
-            label="Name"
+            label={activeOption === types.twitter ? "Twitter Name" : "Title"}
             maxLength={30}
           />
 
-          <Input
-            name="link"
-            label="Link"
-          />
+          {activeOption !== types.note ?
+            <Input
+              name="link"
+              label={activeOption === types.twitter ? "Twitter Link" : "Link"}
+            /> : null
+          }
 
-          <Input
-            name="image"
-            label="Image"
-          />
+          {(activeOption === types.twitter) ?
+            <Input
+              name="image"
+              label="Image"
+            /> : null
+          }
 
           <Input
             tag="textarea"
