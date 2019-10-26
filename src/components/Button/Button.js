@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../css/Button.module.css';
 
-const Button = ({ children, href, secondary }) => {
+const Button = ({ children, href, secondary, ...props }) => {
   const buttonClass = secondary ? styles.secondary : styles.button;
 
   return (
@@ -18,6 +18,7 @@ const Button = ({ children, href, secondary }) => {
             >{children}</a>
           ) : (
             <button
+              {...props}
               className={buttonClass}
               type="submit"
             >{children}</button>
