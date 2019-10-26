@@ -2,10 +2,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../css/Input.module.css';
 
-const Input = ({ tag: Tag, name, label, maxLength }) => {
+const Input = ({ tag: Tag, name, label, maxLength, ...props }) => {
   return (
     <div className={styles.input}>
       <Tag
+        {...props}
         required
         type="text"
         name={name}
