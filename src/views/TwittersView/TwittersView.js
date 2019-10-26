@@ -1,8 +1,14 @@
 import React from 'react';
+import List from '../../components/ListWrapper/ListWrapper';
+import AppContext from '../../context';
 
 const TwittersView = () => {
   return (
-    <p>This is Twitters View</p>
+    <AppContext.Consumer>
+      {(context) => (
+        <List items={context.twitter} />
+      )}
+    </AppContext.Consumer>
   );
 }
 
