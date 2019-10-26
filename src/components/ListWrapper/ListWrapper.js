@@ -5,16 +5,23 @@ import styles from '../css/ListWrapper.module.css'
 
 const ListWrapper = ({ items }) => {
   return (
-    <ul className={styles.listWrapper__wrapper}>
+    <>
+      {items.length ? (
+        <ul className={styles.listWrapper__wrapper}>
 
-      {items.map(item =>
-        <ListItem
-          key={item.name}
-          {...item}
-        />
-      )}
+          {items.map(item =>
+            <ListItem
+              key={item.title}
+              {...item}
+            />
+          )}
 
-    </ul>
+        </ul>
+      ) : (
+          <h1 className={styles.noItems}>There's nothing here yet, please add some items!</h1>
+        )}
+
+    </>
   );
 }
 
