@@ -4,12 +4,16 @@ import logoImage from '../../assets/images/logo.svg';
 import Button from '../Button/Button';
 import styles from '../css/Header.module.css';
 
-const Header = () => {
+const Header = ({ openModalFn }) => {
   return (
     <header className={styles.wrapper}>
       <img src={logoImage} alt="FavNote logo" />
       <HeaderNavigation />
-      <Button secondary >new item</Button>
+
+      <Button
+        onClick={openModalFn}
+        secondary
+      >new item</Button>
     </header>
   );
 }
