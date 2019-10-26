@@ -4,40 +4,43 @@ import styles from '../css/ListItem.module.css';
 import Button from '../../Button/Button';
 import Title from '../../Title/Title';
 
-const ListItem = ({ image, name, description, twitterLink }) => {
+const ListItem = ({ image, title, description, link }) => {
   const ImageTag = image ? 'img' : 'div';
 
   return (
     <li className={styles.listItem__wrapper}>
-      <ImageTag
-        src={image}
-        alt={name}
-        className={image ? styles.listItem__image : styles.listItem__imageNone}
-      />
+      {image &&
+        <ImageTag
+          src={image}
+          alt={title}
+          className={image ? styles.listItem__image : styles.listItem__imageNone}
+        />
+      }
 
       <div>
-        <Title>{name || 'No name'}</Title>
+        <Title>{title || 'No name'}</Title>
 
         <p className={styles.listItem__description}>
           {description}
         </p>
-
-        <Button href={twitterLink}>visit twitter page</Button>
+        {link &&
+          <Button href={link}>visit twitter page</Button>
+        }
       </div>
     </li>
   );
 }
 
 ListItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   image: PropTypes.string,
-  name: PropTypes.string.isRequired,
-  description: PropTypes.string,
-  twitterLink: PropTypes.string.isRequired,
+  link: PropTypes.string,
 }
 
 ListItem.defaultProps = {
   image: null,
-  description: 'One of the React Creators',
+  link: null
 }
 
 export default ListItem;
