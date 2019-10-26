@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/favnote/static/css/main.32ba808e.chunk.css",
-    "main.js": "/favnote/static/js/main.159c57e3.chunk.js",
-    "main.js.map": "/favnote/static/js/main.159c57e3.chunk.js.map",
+    "main.js": "/favnote/static/js/main.c28a6094.chunk.js",
+    "main.js.map": "/favnote/static/js/main.c28a6094.chunk.js.map",
     "runtime-main.js": "/favnote/static/js/runtime-main.a115827a.js",
     "runtime-main.js.map": "/favnote/static/js/runtime-main.a115827a.js.map",
     "static/js/2.812dc734.chunk.js": "/favnote/static/js/2.812dc734.chunk.js",
     "static/js/2.812dc734.chunk.js.map": "/favnote/static/js/2.812dc734.chunk.js.map",
     "index.html": "/favnote/index.html",
-    "precache-manifest.6dcd0bcefb32bdd603daf6faa3cd18d0.js": "/favnote/precache-manifest.6dcd0bcefb32bdd603daf6faa3cd18d0.js",
+    "precache-manifest.136d92bc2bb9a88059f0d7cf39e24c4d.js": "/favnote/precache-manifest.136d92bc2bb9a88059f0d7cf39e24c4d.js",
     "service-worker.js": "/favnote/service-worker.js",
     "static/css/main.32ba808e.chunk.css.map": "/favnote/static/css/main.32ba808e.chunk.css.map",
     "static/media/logo.svg": "/favnote/static/media/logo.a87d0f35.svg"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.a115827a.js",
     "static/js/2.812dc734.chunk.js",
     "static/css/main.32ba808e.chunk.css",
-    "static/js/main.159c57e3.chunk.js"
+    "static/js/main.c28a6094.chunk.js"
   ]
 }

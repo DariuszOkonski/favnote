@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "d41e23b654e4c434b07b97a3f542cd26",
+    "revision": "fc1d652dfa1ff03ecb47d892130196aa",
     "url": "/favnote/index.html"
   },
   {
-    "revision": "f04927f74c88e73e0fa3",
+    "revision": "b9fe6cb5aa32bfe7d1ab",
     "url": "/favnote/static/css/main.32ba808e.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/favnote/static/js/2.812dc734.chunk.js"
   },
   {
-    "revision": "f04927f74c88e73e0fa3",
-    "url": "/favnote/static/js/main.159c57e3.chunk.js"
+    "revision": "b9fe6cb5aa32bfe7d1ab",
+    "url": "/favnote/static/js/main.c28a6094.chunk.js"
   },
   {
     "revision": "585db56c0652a68989f6",
