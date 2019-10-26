@@ -8,6 +8,7 @@ import NotesView from '../NotesView/NotesView';
 import Header from '../../components/Header/Header';
 import Modal from '../../components/Modal/Modal';
 
+
 class Root extends Component {
   state = {
     twitter: [],
@@ -53,7 +54,6 @@ class Root extends Component {
         <AppContext.Provider value={contextElements}>
           <Header openModalFn={this.openModal} />
 
-          <h1>Hello world</h1>
 
           <Switch>
             <Route exact path="/" component={TwittersView} />
