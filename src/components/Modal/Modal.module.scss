@@ -1,0 +1,13 @@
+.wrapper {
+  background-color: #fff;
+  position: fixed;
+  top: 50%;
+  left: 0;
+  right: 0;
+  transform: translateY(-50%);
+  margin: 0 auto;
+  width: 60vw;
+  height: 70vh;
+  border: 1px solid #1e58ff;
+  box-shadow: 11px 10px 35px -9px rgba(145, 143, 145, 1);
+}
